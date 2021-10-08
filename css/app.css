@@ -1,0 +1,296 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+body{
+	padding:0;
+	margin:0;
+	color:white;
+	background-color:black; 
+	font-family: 'Staatliches', cursive;
+}
+
+a{
+	text-decoration:none;
+	color:white;
+}
+
+main{
+	width: 100%;
+}
+
+.logo{
+	width:100%;
+	display:block;
+	text-align:center;
+}
+.logo img{
+	width:100%;
+	height:30%;
+}
+
+.imagenFiestas img{ 
+	width:100%;
+	height:50vh;
+	object-fit:cover;
+}
+
+/*MENU------------------------------------*/
+
+#buttonMenu{
+	display:none;
+}
+label img{
+	background-color:rgb(240, 9, 9,0.8);
+	border:solid white;
+	display:none;
+	height:55px;
+	width:55px;
+	padding:10px;
+}
+.menu{
+	width:100%;
+	background-color:rgb(240, 9, 9,0.8);
+	position:sticky;
+	top:0px;
+}
+
+.menu ul{
+	width:100%;
+	margin:0;
+	padding:0;
+	list-style:none;
+	display:flex;
+	justify-content:flex-end;
+}
+
+.menu li a{
+	display:block;
+	padding:10px;
+	margin:10px;
+	border-radius: 10px;
+	border-bottom:solid 2px white;
+}
+
+.menu li:hover{
+	background-color:black; 
+}
+
+/*CARRUSEL-------------*/
+.carrusel{
+	width:100%;
+	height:100%;
+	max-width:120em;
+	background-color:white;
+	margin:auto;
+	overflow-x:hidden;
+}
+.carrusel .grande{
+	width:500%;
+	height:100%;
+	display: flex;
+	flex-flow:row nowrap;
+	justify-content:space-between;
+	align-items:center;
+	transition:all .5s ease;
+	transform: translateX( 0% );
+}
+
+.carrusel img{
+	width:100%;
+	height:100%;
+	object-fit:cover;
+}
+.carrusel .img{
+	width: calc(100% / 5);
+	height:500px;
+	min-width:5vh;
+}
+.carrusel .puntos{
+	width:100%;
+	background-color:black;
+	padding:2em;
+	margin:1em 0 0;
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content:center;
+	align-items:center;
+}
+.carrusel .punto{
+	width:1em;
+	height:1em;
+	margin:1em 1em 0;
+	background-color:white;
+	border-radius:50%;
+}
+.carrusel .punto.activo{
+	background-color:rgb(240,9,9);
+}
+li{
+	list-style: none
+}
+/*Media Query*/
+
+@media only screen and (max-width: 768px){
+
+	label img{
+		display:block;
+		position:sticky;
+		top:0px;
+	}
+	.menu{
+		width:100%;
+		background-color:rgb(240, 9, 9,0.8);
+		position:sticky;
+		top:55px;
+}
+
+	.menu ul{
+		width:100%;
+		position:absolute;
+		background-color:rgb(240, 9, 9,0.8);
+		flex-direction:column;
+		margin-left:-100%;
+		transition:1s;
+	}
+	#buttonMenu:checked ~ .menu ul{
+		margin:0px;
+	}
+	.menu li{
+		text-align: center;
+	}
+}
+
+
+
+/*CONGELADOS Y FRESCO A----------------------------*/
+
+.parallaxPollo{
+	width:100%;
+	height:100vh;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:space-around;
+	background: fixed no-repeat 50% 50%;
+	background-size:cover;
+}
+#parallaxPollo1{
+	background-image:url(../img/maderaFondo.jpg);
+	height:100%;
+	width:100%;
+}
+
+#parallaxPollo2{
+	background-image:url(../img/maderaFondo.jpg);
+	height:100%;
+	width:100%;
+}
+.fresco{
+	padding:1em;
+}
+
+.imagenPollo{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	transition:all 1s ease-in-out;
+}
+
+.imagenPollo:hover{
+	transform:scale(1.2);
+}
+
+.imagenPollo img{
+	height:280px;
+	width:280px;
+	object-fit:cover;
+}
+.respuesta2{
+	max-height:0;
+	overflow:hidden;
+	transition:all .8s ease;
+}
+.respuesta2 p{
+	background-color:rgb(0,0,0,.5);
+	text-align:center;
+	font-size:20px;
+	padding:10px;
+	border-radius:10px;
+}
+
+.fresco.active .respuesta2{
+	max-height:200px;
+}
+
+.fresco.active .arrow img{
+	transform: rotate(180deg);
+}
+.arrow{
+	width:50%;
+	margin:auto;
+	background-color:rgb(240, 9, 9,0.5);
+	display:flex;
+	border-radius:0px 0px 15px 15px;
+	border-bottom:solid 2px white;
+	justify-content:center;
+	align-items:center;
+}
+.arrow img{
+	height:35px;
+	width:35px;
+	padding:5px;
+	transition: transform .5s ease-in-out;
+}
+
+/*PARALLAX SANIDAD---------------------*/
+
+.parallaxSanidad {
+	background: fixed no-repeat 50% 50%;
+	background-size:cover;
+	width:100%
+	height:100vh;
+	display:flex;
+	flex-flow:row;
+	justify-content:space-around;
+	flex-wrap:wrap;
+	margin-top: 10vh;
+	margin-bottom: 10vh
+}
+#parallaxSanidad1{
+	background-image:url(../img/esferas1.jpg);
+	height:100%;
+	width:100%;
+
+}
+.sanidadItem{
+	display:flex;
+	flex-flow:row;
+	justify-content: space-around;
+	flex-wrap:wrap;
+	align-items: center;
+	padding:2em;
+
+}
+
+.sanidadItem img{
+	height:150px;
+	width:150px;
+	background-color:rgb(255,255,255,0.3);
+	padding:15px;
+	border-radius:50%;
+
+}
+
+.sanidadItem p{
+	background-color:rgb(240, 9, 9,0.5);
+	font-size:1.5rem;
+	text-align:center;
+	margin:1em;
+	padding:1em;
+	border-radius:0px 10px 0px 10px;
+}
+
+
